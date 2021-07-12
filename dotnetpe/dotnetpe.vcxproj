@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2F93B019-8FCF-4515-975E-A97E40664CA2}</ProjectGuid>
+    <RootNamespace>dotnetpe</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdInc.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mscoree.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdInc.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mscoree.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Assembly.cpp" />
+    <ClCompile Include="BasicBlock.cpp" />
+    <ClCompile Include="BasicBlockPool.cpp" />
+    <ClCompile Include="DotNetPE.cpp" />
+    <ClCompile Include="ILInstr.cpp" />
+    <ClCompile Include="InstrBuffer.cpp" />
+    <ClCompile Include="SigElem.cpp" />
+    <ClCompile Include="SigElemStream.cpp" />
+    <ClCompile Include="Signature.cpp" />
+    <ClCompile Include="StdInc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StreamLayer.cpp" />
+    <ClCompile Include="StructureLayer.cpp" />
+    <ClCompile Include="StructureLayer\MethodRef.cpp" />
+    <ClCompile Include="StructureLayer\TypeRef.cpp" />
+    <ClCompile Include="TableLayer.cpp" />
+    <ClCompile Include="StreamLayer\MetaStream.cpp" />
+    <ClCompile Include="TableLayer\MetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\AssemblyMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\AssemblyOSMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\AssemblyProcessorMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\AssemblyRefMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\AssemblyRefOSMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\AssemblyRefProcessorMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ClassLayoutMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ConstantMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\CustomAttributeMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\DeclSecurityMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\EventMapMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\EventMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ExportedTypeMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\FieldLayoutMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\FieldMarshalMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\FieldMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\FieldRVAMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\FileMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\GenericParamConstraintMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\GenericParamMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ImplMapMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\InterfaceImplMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ManifestResourceMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\MemberRefMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\MethodDefMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\MethodImplMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\MethodSemanticsMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\MethodSpecMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ModuleMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ModuleRefMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\NestedClassMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\ParamMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\PropertyMapMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\PropertyMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\StandAloneSigMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\TypeDefMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\TypeRefMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metatables\TypeSpecMetaTable.cpp" />
+    <ClCompile Include="TableLayer\metafieldreaders\StreamIndexMetaFieldReader.cpp" />
+    <ClCompile Include="TableLayer\metafieldreaders\TableIndexMetaFieldReader.cpp" />
+    <ClCompile Include="StructureLayer\Field.cpp" />
+    <ClCompile Include="StructureLayer\MethodDef.cpp" />
+    <ClCompile Include="StructureLayer\Module.cpp" />
+    <ClCompile Include="StructureLayer\Resource.cpp" />
+    <ClCompile Include="StructureLayer\TypeDef.cpp" />
+    <ClCompile Include="Signatures\FieldSig.cpp" />
+    <ClCompile Include="Signatures\Elements\ArrayShapeSigElem.cpp" />
+    <ClCompile Include="Signatures\Elements\CustomModSigElem.cpp" />
+    <ClCompile Include="Signatures\Elements\ParamSigElem.cpp" />
+    <ClCompile Include="Signatures\Elements\RetTypeSigElem.cpp" />
+    <ClCompile Include="Signatures\Elements\TypeDefOrRefEncodedSigElem.cpp" />
+    <ClCompile Include="Signatures\Elements\TypeSigElem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicBlock.h" />
+    <ClInclude Include="BasicBlockPool.h" />
+    <ClInclude Include="DotNetPE.h" />
+    <ClInclude Include="GUID.h" />
+    <ClInclude Include="ILInstr.h" />
+    <ClInclude Include="InstrBuffer.h" />
+    <ClInclude Include="SigElem.h" />
+    <ClInclude Include="SigElemStream.h" />
+    <ClInclude Include="Signature.h" />
+    <ClInclude Include="StdInc.h" />
+    <ClInclude Include="StreamLayer.h" />
+    <ClInclude Include="StructureLayer.h" />
+    <ClInclude Include="StructureLayer\MethodRef.h" />
+    <ClInclude Include="TableLayer.h" />
+    <ClInclude Include="vendor\corhdr.h" />
+    <ClInclude Include="StreamLayer\MetaStream.h" />
+    <ClInclude Include="TableLayer\MetaFieldReader.h" />
+    <ClInclude Include="TableLayer\MetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\AssemblyMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\AssemblyOSMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\AssemblyProcessorMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\AssemblyRefMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\AssemblyRefOSMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\AssemblyRefProcessorMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ClassLayoutMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ConstantMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\CustomAttributeMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\DeclSecurityMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\EventMapMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\EventMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ExportedTypeMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\FieldLayoutMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\FieldMarshalMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\FieldMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\FieldRVAMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\FileMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\GenericParamConstraintMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\GenericParamMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ImplMapMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\InterfaceImplMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ManifestResourceMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\MemberRefMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\MethodDefMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\MethodImplMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\MethodSemanticsMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\MethodSpecMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ModuleMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ModuleRefMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\NestedClassMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\ParamMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\PropertyMapMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\PropertyMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\StandAloneSigMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\TypeDefMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\TypeRefMetaTable.h" />
+    <ClInclude Include="TableLayer\metatables\TypeSpecMetaTable.h" />
+    <ClInclude Include="TableLayer\metafieldreaders\SimpleMetaFieldReader.h" />
+    <ClInclude Include="TableLayer\metafieldreaders\StreamIndexMetaFieldReader.h" />
+    <ClInclude Include="TableLayer\metafieldreaders\TableIndexMetaFieldReader.h" />
+    <ClInclude Include="StructureLayer\Assembly.h" />
+    <ClInclude Include="StructureLayer\Field.h" />
+    <ClInclude Include="StructureLayer\MethodDef.h" />
+    <ClInclude Include="StructureLayer\Module.h" />
+    <ClInclude Include="StructureLayer\Resource.h" />
+    <ClInclude Include="StructureLayer\StructureItem.h" />
+    <ClInclude Include="StructureLayer\StructureItemList.h" />
+    <ClInclude Include="StructureLayer\Type.h" />
+    <ClInclude Include="StructureLayer\TypeDef.h" />
+    <ClInclude Include="StructureLayer\TypeRef.h" />
+    <ClInclude Include="Signatures\FieldSig.h" />
+    <ClInclude Include="Signatures\Elements\ArrayShapeSigElem.h" />
+    <ClInclude Include="Signatures\Elements\CustomModSigElem.h" />
+    <ClInclude Include="Signatures\Elements\ParamSigElem.h" />
+    <ClInclude Include="Signatures\Elements\RetTypeSigElem.h" />
+    <ClInclude Include="Signatures\Elements\TypeDefOrRefEncodedSigElem.h" />
+    <ClInclude Include="Signatures\Elements\TypeSigElem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pe\pe.vcxproj">
+      <Project>{aedf1e04-afc4-446c-b667-fd266c2aa01e}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\shared\shared.vcxproj">
+      <Project>{58adedec-06f5-488d-9664-abe1f780963f}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\vendor\DisasMSIL\DisasMSIL.vcxproj">
+      <Project>{275654ee-e2c6-44f0-8ed5-c893e3a221ab}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
