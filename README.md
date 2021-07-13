@@ -1,6 +1,8 @@
 # Disclaimer
 This is not my code, I just uploaded it here because I couldn't find it anywhere else.
 
+The original author of the code is [arc_](http://www.woodmann.com/forum/memberlist.php?mode=viewprofile&u=19806)
+
 ## tl;dr
 dumbassembly is a smartassembly decompiler.
 
